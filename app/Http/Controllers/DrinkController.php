@@ -19,10 +19,18 @@ class DrinkController extends Controller
         $drink= Drink::where("drink",$value)->first();
         return $drink;
     }
-    public function updateDrink(){
-        $drink = Drink::find(4);
-        $drink->amount= 93;
+    public function updateDrink(Request $request){
+        $drink = Drink::find($request["id"]);
+        $drink->drink= $request["drink"];
+        $drink->amount=$request["amount"];
         $drink->save();
         return "ok";
+    }
+    public function deleteDrink(Request $request){
+        $drink = Drink::find($request["id"])->delete();
+        return $drink;
+    }
+    public function getDrinksWithType(){
+        
     }
 }

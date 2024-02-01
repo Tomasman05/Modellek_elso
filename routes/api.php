@@ -25,3 +25,4 @@ Route::get("/drinks",[DrinkController::class, "getDrinks"]);
 Route::get("/oneDrink",[DrinkController::class, "getOneDrink"]);
 Route::get("/byName/{value}",[DrinkController::class, "getByName"]);
 Route::get("/update",[DrinkController::class, "updateDrink"]);
+Route::delete("/delete",[DrinkController::class, "deleteDrink"]);
